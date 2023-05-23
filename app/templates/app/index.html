@@ -3,13 +3,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="教員向けのアプリを条件指定で検索するサイトです。科目や金額などを指定して、条件に合うアプリを表示します。学校教育のIT化が進み、授業にITを取り入れたいと考えている先生も多くいると思います。忙しい先生方のアプリ探しの手助けになれば幸いです。">
+        <title>先生のアプリー教員向けのアプリを条件指定で表示</title>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
         <div class="content">
         <header id="header">
             <img src="../../static/images/logo.png" id="logo">
-            <div id="h1_header"><font size="6">先生のアプリ</font></div>
+            <div id="h1_header"><h1>先生のアプリ</h1></div>
         </header>
         <h2 id="page_name">条件を選択</h2>
         <form action="{% url 'search' %}" method="post" id="search_field">

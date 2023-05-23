@@ -16,3 +16,6 @@ def search(request):
         'app':app,
     }
     return render(request,"app/search.html",context)
+
+def google(request):
+    return render(request, 'app/google213d77350f25b686.html')
