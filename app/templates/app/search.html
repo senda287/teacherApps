@@ -9,32 +9,47 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
-    <div class="content">
       <a href="..">
       <header class="header">
         <img src="../../static/images/logo.png" class="logo">
-        <div class="h1_header"><h1>先生のアプリ</h1></div>
+        <h1 class="h1_header">先生のアプリ</h2>
       </header>
       </a>
       <h2 id="page_name">検索結果</h2>
       <div id="result_form">
-        <table id="search_result">
-          <tbody>
-            {% for app in app %}
+        <table id="sort_table">
+          <tr>
+            <th class="sort_hidden">画像順</th>
+            <th class="sort_hidden">名前順</th>
+            <th class="sort_hidden">金額順</th>
+            <th id="sort_button">評価順 ⇅</th>
+            <th class="sort_hidden">詳細順</th>
+            <th id="date">2023.7.5</th>
+          </tr>
+          {% for app in app %}  
+            <tbody class="item">
               <tr>
-                <td id="img"><img src="{{app.images}}" alt="" width="80" height="80"/></td>
-                <td id="content">
-                  <p id="app_name"><a href="{{app.link}}" target="_blank" rel="noreferrer noopener">{{app.app_name}}</a>
-                  / {{app.money}} 円
-                  / <span class="star-rating" data-rate="{{app.value}}"></span>({{app.value}})</p>
-                  <p id="detail">{{app.detail}}</p>
+                <td id="img_td">
+                    <img id="img" src="{{app.images}}" alt=""/>
+                </td>    
+                <td id="app_name">
+                  <a href="{{app.link}}" target="_blank" rel="noreferrer noopener">{{app.app_name}}</a>
+                </td>
+                <td id="app_money">
+                  {{app.money}} 円 / 
+                </td>
+                <td id="app_value">
+                  <span class="star-rating" data-rate="{{app.value}}"></span>({{app.value}})
+                </td>
+                <td id="detail">
+                  {{app.detail}}
                 </td>
               </tr>
-            {% endfor %}
-          </tbody>
+            </tbody>
+          {% endfor %}  
         </table>
         <div class="button"><a href="../" class="btn">検索画面へ</a></div>
       </div>
-    </div>
+    <script src="../../static/js/w3.js"></script>  
   </body>
 </html>

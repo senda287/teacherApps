@@ -21,6 +21,11 @@
     padding-left: 20px;
 }
 
+.date{
+    text-align: right;
+    padding-left: 30px;
+}
+
 #page_name{
     padding-left: 150px;
 }
@@ -51,21 +56,6 @@ body{
 .btn:hover{
     color: #ffffff;
     background-color: #2cc12c;
-}
-
-.contact{
-    display: flex;
-    width: 100%;
-    height: 30px;
-    background-color: rgba(171, 213, 255, 0.671);
-    position: absolute;
-    bottom: 0;
-    align-items: center;
-}
-
-#contact_state{
-    margin-right: 20px;
-    margin-left: auto;
 }
 
 /*index.html*/
@@ -146,35 +136,15 @@ input[type="radio"]:checked + label {
     border: 2px solid #6d6363;/* ボックスの境界線を実線で指定する */
     border-radius: 30px; /* 角丸を指定する */
 }
-/*6文字*/
-.label6 {
-    display: block; /* ブロックレベル要素化する */
-    float: left; /* 要素の左寄せ・回り込を指定する */
-    margin: 0 10px 5px 10px; /* ボックス外側の余白を指定する */
-    width: 150px; /* ボックスの横幅を指定する */
-    height: 35px; /* ボックスの高さを指定する */
-    padding-left: 5px; /* ボックス内左側の余白を指定する */
-    padding-right: 5px; /* ボックス内御右側の余白を指定する */
-    padding-bottom: 7px;
-    color: #6d6363; /* フォントの色を指定 */
-    text-align: center; /* テキストのセンタリングを指定する */
-    line-height: 45px; /* 行の高さを指定する */
-    cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
-    border: 2px solid #6d6363;/* ボックスの境界線を実線で指定する */
-    border-radius: 30px; /* 角丸を指定する */
-}
 .label:hover {
     background-color: #E2EDF9; /* マウスオーバー時の背景色を指定する */
 }
 
-form{
+#search_field_macro{
+    margin: 0 auto;
     padding: 0px 10px 5px 10px;
     width: 700px;
     text-align: center;
-}
-
-#search_field_pc{
-    margin: 0 auto;
 }
 
 .search_title{
@@ -200,36 +170,71 @@ form{
 }
 
 /*search.html*/
-
-#search_result{
-    border: 1px solid #333;
+#result_form{
     margin: 0 auto;
-}
-
-#content{
-    border: 1px solid #333;
-    padding: 0 10px 0 10px;
-    width: 640px;
-}
-
-#information{
-    border: 1px solid #333;
-    padding: 0 10px 0 10px;
-    width: 120px;
-}
-
-.detail{
+    padding: 0;
+    width: 720px;
     text-align: left;
 }
 
-#img{
+#sort_table{
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-bottom: 1px solid #333;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+.sort_hidden{
+    display: none;
+}
+
+#sort_button{
     border: 1px solid #333;
-    padding: 0 10px 0 10px;
+    height: 15px;
+    font-size: 18px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+#date{
+    text-align: right;
+    padding-right: 5px;
+}
+
+#img_td{
+    width: 100px;
+    height: 100px;
+    border-top: 1px solid #333;
+}
+
+#img{
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+
+#app_name{
+    display: block;
+    border-top: 1px solid #333;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+#app_money{
+    display: block;
+    display: inline;
+    padding-left: 5px;
 }
 
 #app_value{
     display: inline;
-    padding: 1em 0 1em 0;
+}
+
+#detail{
+    display: block;
+    padding-bottom: 5px;
+    padding-left: 5px;
 }
 
 .button{
@@ -238,64 +243,63 @@ form{
     padding-top: 20px;
 }
 
-/*　画面サイズが480px以下の場合　*/
+/*　画面サイズが767px以下の場合　*/
 @media screen and (max-width:767px){
     .header{
         display: flex;
         width: 100%;
-        height: 100px;
-        background-color: rgba(43, 183, 0, 0.671);
-        position: fixed;
-        top: 0;
-        left: 0;
+        height: 50px;
+        background-color: rgba(42, 181, 0, 0.671);
         align-items: center;
     }
 
     .logo{
-        width: 90px;
-        height: 90px;
-        padding-left: 150px;
+        width: 45px;
+        height: 45px;
+        padding-left: 80px;
     }
     
     .h1_header{
         color: white;
-        padding-left: 20px;
+        padding-left: 15px;
+        font-size: 18px;
     }
 
     #page_name{
-        padding-left: 150px;
-        padding-top: 10px;
-        font-size: 35px;
-    }
-
-    .content{
-        min-height: calc(100vh - 30px);
+        padding-left: 80px;
+        font-size: 20px;
     }
 
     body{
-        padding-top: 90px;
+        padding-top: 50px;
         position: relative;
-        padding-bottom: 30px;
         margin: 0;
-        width: 720px;
     }
 
     /* index.html */
-    #search_field_dev{
-        margin: 0 75px auto;
+    #search_field_macro{
+        margin: 0 auto;
+        padding: 0;
+        width: 350px;
+        text-align: center;
+    }
+
+    #search_field_micro{
+        margin: 0 20px auto;
+    }
+
+
+    .search_title{
+        text-align: left;
+        margin: 0;
+        font-size: 18px;
     }
 
     .search_condition{
         width: 1200px;
         text-align: left;
         padding: 5px 0 5px 5px;
-        font-size: 25px;
-    }
-
-    .search_title{
-        text-align: left;
-        margin: 0;
-        font-size: 30px;
+        font-size: 13px;
     }
 
     /* ラジオボタン */
@@ -303,16 +307,16 @@ form{
     .label2 {
         display: block; /* ブロックレベル要素化する */
         float: left; /* 要素の左寄せ・回り込を指定する */
-        margin: 5px 10px 5px 10px; /* ボックス外側の余白を指定する */
-        width: 100px; /* ボックスの横幅を指定する */
-        height: 50px; /* ボックスの高さを指定する */
+        margin: 2px 5px 2px 5px; /* ボックス外側の余白を指定する */
+        width: 48px; /* ボックスの横幅を指定する */
+        height: 22px; /* ボックスの高さを指定する */
         padding-top: 7px;
         padding-left: 5px; /* ボックス内左側の余白を指定する */
         padding-right: 5px; /* ボックス内御右側の余白を指定する */
         padding-bottom: 0;
         color: #6d6363; /* フォントの色を指定 */
         text-align: center; /* テキストのセンタリングを指定する */
-        line-height: 45px; /* 行の高さを指定する */
+        line-height: 17px; /* 行の高さを指定する */
         cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
         border: 2px solid #6d6363;/* ボックスの境界線を実線で指定する */
         border-radius: 30px; /* 角丸を指定する */
@@ -321,16 +325,16 @@ form{
     .label3 {
         display: block; /* ブロックレベル要素化する */
         float: left; /* 要素の左寄せ・回り込を指定する */
-        margin: 5px 10px 5px 10px; /* ボックス外側の余白を指定する */
-        width: 125px; /* ボックスの横幅を指定する */
-        height: 50px; /* ボックスの高さを指定する */
+        margin: 2px 5px 2px 5px; /* ボックス外側の余白を指定する */
+        width: 65px; /* ボックスの横幅を指定する */
+        height: 22px; /* ボックスの高さを指定する */
         padding-top: 7px;
         padding-left: 5px; /* ボックス内左側の余白を指定する */
         padding-right: 5px; /* ボックス内御右側の余白を指定する */
         padding-bottom: 0;
         color: #6d6363; /* フォントの色を指定 */
         text-align: center; /* テキストのセンタリングを指定する */
-        line-height: 45px; /* 行の高さを指定する */
+        line-height: 17px; /* 行の高さを指定する */
         cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
         border: 2px solid #6d6363;/* ボックスの境界線を実線で指定する */
         border-radius: 30px; /* 角丸を指定する */
@@ -339,16 +343,16 @@ form{
     .label4 {
         display: block; /* ブロックレベル要素化する */
         float: left; /* 要素の左寄せ・回り込を指定する */
-        margin: 5px 10px 5px 10px; /* ボックス外側の余白を指定する */
-        width: 150px; /* ボックスの横幅を指定する */
-        height: 50px; /* ボックスの高さを指定する */
+        margin: 2px 5px 2px 5px; /* ボックス外側の余白を指定する */
+        width: 75px; /* ボックスの横幅を指定する */
+        height: 22px; /* ボックスの高さを指定する */
         padding-top: 7px;
         padding-left: 5px; /* ボックス内左側の余白を指定する */
         padding-right: 5px; /* ボックス内御右側の余白を指定する */
         padding-bottom: 0;
         color: #6d6363; /* フォントの色を指定 */
         text-align: center; /* テキストのセンタリングを指定する */
-        line-height: 45px; /* 行の高さを指定する */
+        line-height: 17px; /* 行の高さを指定する */
         cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
         border: 2px solid #6d6363;/* ボックスの境界線を実線で指定する */
         border-radius: 30px; /* 角丸を指定する */
@@ -357,16 +361,16 @@ form{
     .label5 {
         display: block; /* ブロックレベル要素化する */
         float: left; /* 要素の左寄せ・回り込を指定する */
-        margin: 5px 10px 5px 10px; /* ボックス外側の余白を指定する */
-        width: 175px; /* ボックスの横幅を指定する */
-        height: 50px; /* ボックスの高さを指定する */
+        margin: 2px 5px 2px 5px; /* ボックス外側の余白を指定する */
+        width: 95px; /* ボックスの横幅を指定する */
+        height: 22px; /* ボックスの高さを指定する */
         padding-top: 7px;
         padding-left: 5px; /* ボックス内左側の余白を指定する */
         padding-right: 5px; /* ボックス内御右側の余白を指定する */
         padding-bottom: 0;
         color: #6d6363; /* フォントの色を指定 */
         text-align: center; /* テキストのセンタリングを指定する */
-        line-height: 45px; /* 行の高さを指定する */
+        line-height: 17px; /* 行の高さを指定する */
         cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
         border: 2px solid #6d6363;/* ボックスの境界線を実線で指定する */
         border-radius: 30px; /* 角丸を指定する */
@@ -376,18 +380,18 @@ form{
     }
 
     .btn{
-        font-size: 25px;
+        font-size: 13px;
         display: inline-block;
         vertical-align: middle;
-        margin: 30px 10px 30px 10px;
-        padding: 20px 100px;
+        margin: 30px 10px;
+        padding: 12px 60px;
         color: #2cc12c;
         font-weight: bold;
         letter-spacing: 0.5pt;
         text-decoration: none;
         background-color: #ffffff;
         border: 1px solid #2cc12c;
-        border-radius: 15px; /* 角丸を指定する */
+        border-radius: 8px; /* 角丸を指定する */
         cursor: pointer;
     } 
     
@@ -397,21 +401,59 @@ form{
     }
 
     /* search.html */
-    #search_result{
-        width: 600px;
-        border: 1px solid #333;
-        margin: 0 auto;
-    }
-
-    #content{
-        border: 1px solid #333;
-        padding: 0 10px 0 10px;
-        width: 640px;
-        font-size: 20px;
-    }
-
     #result_form{
-        width: 700px;
+        margin: 0 auto;
+        padding: 0;
+        width: 360px;
+        text-align: left;
+    }
+
+    #sort_button{
+        font-size: 11px;
+        text-align: center;
+    }
+
+    #sort_table{
+        width: 340px;
+        margin: 0 auto;
+        border-left: none;
+        border-right: none;
+    }
+
+    #date{
+        font-size: 8px;
+    }
+
+    #img_td{
+        width: 50px;
+        height: 50px;
+    }
+
+    #img{
+        width:40px;
+        height:40px;
+        padding: 5px;
+    }
+
+    #app_name{
+        display: block;
+        font-size: 10px;
+    }
+    
+    #app_money{
+        display: block;
+        display: inline;
+        font-size: 10px;
+    }
+    
+    #app_value{
+        display: inline;
+        font-size: 10px;
+    }
+    
+    #detail{
+        display: block;
+        font-size: 10px;
     }
 }
 

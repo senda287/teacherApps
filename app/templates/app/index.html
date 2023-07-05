@@ -9,15 +9,14 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
-        <div class="content">
         <header class="header">
             <img src="../../static/images/logo.png" class="logo">
-            <div class="h1_header"><h1>先生のアプリ</h1></div>
+            <h1 class="h1_header">先生のアプリ</h2>
         </header>
         <h2 id="page_name">条件を選択</h2>
-        <form action="{% url 'search' %}" method="post" id="search_field_pc">
+        <form action="{% url 'search' %}" method="post" id="search_field_macro">
             {% csrf_token %}
-            <table  id="search_field_dev">
+            <table  id="search_field_micro">
                 <tr>
                     <td class="search_title">
                         <b>学校</b>
@@ -88,6 +87,5 @@
                 <button type="input" class="btn">この条件で検索</button>
             </div>
         </form>
-        </div>
     </body>
 </html>
